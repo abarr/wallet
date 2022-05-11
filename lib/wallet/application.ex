@@ -5,12 +5,15 @@ defmodule Wallet.Application do
 
   use Application
 
+  @currencies [:USD, :AUD]
+  @wallets ["trust", "capital"]
+
   @impl true
   def start(_type, _args) do
     children = [
       Wallet.App,
       Wallet.Repo,
-      Wallet.Wallets.Supervisor
+      {Wallet.Wallets.Supervisor, [@currencies, @wallets]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

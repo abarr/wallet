@@ -10,7 +10,7 @@ defmodule Wallet.Wallets.Projections.Wallet do
 
   schema "wallets" do
     field :name, :string
-    field :balances, {:array, Money.Ecto.Composite.Type}
+    field :balances, {:array, :map}
     timestamps()
   end
 end

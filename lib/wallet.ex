@@ -6,6 +6,7 @@ defmodule Wallet do
   alias Wallet.Repo
   alias Wallet.App
   alias Wallet.Wallets.Commands.CreateWallet
+  alias Wallet.Wallets.Projections.Wallet
 
   @doc """
   Create a wallet
@@ -25,8 +26,12 @@ defmodule Wallet do
       |> CreateWallet.new()
 
     with :ok <- App.dispatch(create_wallet, consistency: :strong) do
-      get(Wallet.Wallets.Projections.Wallet, id)
+      get(Wallet, id)
     end
+  end
+
+  def get_wallet_by_name(name) do
+    Repo.get_by(Wallet, name: name)
   end
 
   defp get(schema, id) do

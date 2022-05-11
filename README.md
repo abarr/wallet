@@ -8,18 +8,14 @@
 6. mix ecto.reset
 7. iex -S mix
 
+
+Create a Wallet:
+
 ```
-iex(2)> Wallet.create_wallet(%{"name" => "Test"})
+iex(2)> Wallet.create_wallet(%{"name" => "Wallet Name"})
+```
 
-# Result
-{:ok,
- %Wallet.Wallets.Projections.Wallet{
-   __meta__: #Ecto.Schema.Metadata<:loaded, "wallets">,
-   balances: [%{"amount" => "0", "currency" => "USD"}],
-   id: "f195e6b8-2dfe-4dbb-8f20-67ef015acdb4",
-   inserted_at: ~U[2022-05-11 03:05:24.000000Z],
-   name: "Test",
-   updated_at: ~U[2022-05-11 03:05:24.000000Z]
- }}
 
+```
+iex(2)> Wallet.create_wallet(%{"name" => "Wallet Name"})
 ```

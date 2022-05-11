@@ -14,7 +14,7 @@ defmodule Wallet.Wallets.Projectors.Wallet do
     Ecto.Multi.insert(multi, :wallet, %Wallet{
       id: wallet_created.id,
       name: wallet_created.name,
-      balances: [Money.new(:USD, 0)]
+      balances: wallet_created.balances
     })
   end)
 

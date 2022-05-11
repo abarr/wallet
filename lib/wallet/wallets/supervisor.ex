@@ -5,7 +5,7 @@ defmodule Wallet.Wallets.Supervisor do
     Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
   end
 
-  def init(_arg) do
+  def init(_args) do
     Supervisor.init(
       [
         Wallet.Wallets.Projectors.Wallet

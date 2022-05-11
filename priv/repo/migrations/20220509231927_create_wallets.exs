@@ -5,7 +5,7 @@ defmodule Wallet.Repo.Migrations.CreateWallets do
     create table(:wallets, primary_key: false) do
       add :id, :uuid, primary_key: true
       add :name, :string, null: false
-      add :balances, {:array, :money_with_currency}, default: []
+      add :balances, {:array, :map}, default: []
       timestamps()
     end
   end
