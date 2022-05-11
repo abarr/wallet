@@ -28,7 +28,11 @@ defmodule Wallet.MixProject do
       {:jason, "~> 1.3"},
       {:ex_cldr, "~> 2.28.0"},
       {:ex_money, "~> 5.10"},
-      {:ex_money_sql, "~> 1.6"}
+      {:ex_money_sql, "~> 1.6"},
+      {:commanded, "~> 1.3"},
+      {:commanded_ecto_projections, "~> 1.2"},
+      {:commanded_eventstore_adapter, "~> 1.2"}
+
     ]
   end
 

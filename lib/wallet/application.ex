@@ -8,7 +8,9 @@ defmodule Wallet.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      Wallet.Repo
+      Wallet.App,
+      Wallet.Repo,
+      Wallet.Wallets.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
